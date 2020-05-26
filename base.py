@@ -71,7 +71,7 @@ start_msg()
 player_hand = draw(2)
 dealer_hand = draw(2)    
 
-print(f'Your hand: {player_hand[0]} and {player_hand[1]}')
+print(f'\nYour hand: {player_hand[0]} and {player_hand[1]}')
 print(f'\nDealer hand: {dealer_hand[0]} and tapped card')
 print('\nWhat you want to do? hit or stand')
 
@@ -83,7 +83,7 @@ print('\nWhat you want to do? hit or stand')
 print("\nPlayer Turn")
 while True:
     if totalPoints(player_hand) < 21:
-        player_choice = input("... ")
+        player_choice = input("\n... ")
         if player_choice == "hit":
             hit(player_hand)
             print(player_hand)
@@ -108,11 +108,12 @@ while True:
         if totalPoints(dealer_hand) > 21:
             print("\nDealer busted")
             print("Player win")
+            exit()
         elif totalPoints(dealer_hand) == 21:
             print("\nDealer win")
             exit()
     else:
-        print("\nDealer win")
+        print("\nDraw")
         exit()
 
 
